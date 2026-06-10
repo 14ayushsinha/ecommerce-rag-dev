@@ -24,11 +24,12 @@ def build_embedding_text(product):
     return f"""
 Product Name: {product['name']}
 Brand: {product['brand']}
-Category: {product['full_category_path']}
-
+Main Category: {product['main_category']}
+Subcategory: {product['subcategory']}
+Full Category Path:
+{product['full_category_path']}
 Description:
 {product['description']}
-
 Specifications:
 {specs}
 """.strip()

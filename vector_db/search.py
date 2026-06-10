@@ -21,9 +21,7 @@ model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
 
 def search_products(query, max_price=None, brand=None, category=None, limit=5):
 
-    start = time.time()
     query_vector=model.encode(query).tolist()
-    print("Embedding time:", time.time()-start)
 
     conditions=[]
 
@@ -64,21 +62,31 @@ def search_products(query, max_price=None, brand=None, category=None, limit=5):
             must=conditions
         )
 
-    start = time.time()
     results = client.query_points(
         collection_name=COLLECTION_NAME,
         query=query_vector,
         query_filter=search_filter,
-        limit=limit
+        limit=limit*3
     )
-    print("Qdrant time:", time.time()-start)
 
-    return results.points
+    #Remove duplicate products
+
+    seen=set()
+    unique_results = []
+
+    for point in results.points:
+        name = point.payload['name']
+
+        if name not in seen:
+            seen.add(name)
+            unique_results.append(point)
+
+    return unique_results[:limit]
 
 if __name__ == '__main__':
 
-    query = 'jewellery'
-    results=search_products(query=query, brand='Voylla', max_price=2000)
+    query = 'notebook'
+    results=search_products(query=query, max_price=200)
     print(f'\nQuery: {query}\n')
 
     for i, result in enumerate(results, start=1):
