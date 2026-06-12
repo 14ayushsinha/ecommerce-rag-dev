@@ -19,17 +19,18 @@ client = QdrantClient(
 
 model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
 
-def search_products(query, max_price=None, brand=None, category=None, limit=5):
+def search_products(query, min_price=None, max_price=None, brand=None, category=None, limit=5):
 
     query_vector=model.encode(query).tolist()
 
     conditions=[]
 
-    if max_price is not None:
+    if min_price is not None or max_price is not None:
         conditions.append(
             FieldCondition(
                 key='discounted_price',
                 range=Range(
+                    gte=min_price,
                     lte=max_price
                 )
             )

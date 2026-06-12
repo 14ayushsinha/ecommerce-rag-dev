@@ -22,6 +22,28 @@ def main():
 
     print(f'Loaded {len(products)}, products')
 
+    # seen = set()
+    # unique_products = []
+
+    # for product in products:
+    #     pid = product['id']
+
+    #     if pid not in seen:
+    #         seen.add(pid)
+    #         unique_products.append(product)
+    
+    # products = unique_products
+
+    # print(f'After deduplication: {len(products)} products')
+
+    # from collections import Counter
+
+    # counter = Counter(product["id"] for product in products)
+
+    # duplicates = sum(count > 1 for count in counter.values())
+
+    # print(f"Duplicate products: {duplicates}")
+
     print('Building BM25 corpus...')
 
     corpus = []

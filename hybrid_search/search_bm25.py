@@ -18,6 +18,7 @@ for rank, idx in enumerate(top_indices, 1):
     print('\n' + '='*80)
     print(f'Rank #{rank}')
     print("Score:", round(scores[idx],4))
+    print("ID:", product["id"])
     print("Name:", product['name'])
     print("Brand", product['brand'])
     print("Main Category:", product['main_category'])
