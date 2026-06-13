@@ -60,7 +60,7 @@ def passes_filters(product, max_price=None, brand=None, category=None):
 
 #BM25 search
 
-def bm25_search(query, max_price=None, brand=None, category=None, limit=50):
+def bm25_search(query, min_price=None, max_price=None, brand=None, category=None, limit=100):
     tokenized_query = query.lower().split()
 
     scores = bm25.get_scores(tokenized_query)
@@ -143,21 +143,31 @@ def diversify_results(fused_scores, limit=5):
 
 #Hybrid Search
 
-def hybrid_search(query, min_price=None, max_price=None, brand=None, category=None, limit=5):
+def hybrid_search(query, limit=5):
+
+    parsed = parse_query(
+        query,
+        known_brands
+    )
+    # print(f'Parsed query: {parsed}')
+
+    # print("\n" + "=" * 80)
+    # print("HYBRID SEARCH EXECUTED")
+    # print(f"Original Query: {query}")
 
     bm25_results = bm25_search(
-        query=query,
-        max_price=max_price,
-        brand=brand,
-        category=category,
+        query=parsed['query'],
+        brand=parsed['brand'],
+        min_price=parsed['min_price'],
+        max_price=parsed['max_price'],
         limit=100
     )
 
     vector_results = search_products(
-        query=query,
-        max_price=max_price,
-        brand=brand,
-        category=category,
+        query=parsed['query'],
+        brand=parsed['brand'],
+        min_price=parsed['min_price'],
+        max_price=parsed['max_price'],
         limit=50
     )
     # print(vector_results[0].payload)
@@ -180,19 +190,7 @@ if __name__ == '__main__':
 
     query = input('Query: ')
 
-    parsed = parse_query(
-        query,
-        known_brands
-    )
-
-    print(parsed)
-
-    results = hybrid_search(
-        query = parsed['query'],
-        brand = parsed['brand'],
-        min_price = parsed['min_price'],
-        max_price = parsed['max_price']
-    )
+    results = hybrid_search(query)
 
     for rank, (product, score) in enumerate(results, start=1):
         print('\n'+'='*80)
