@@ -1,6 +1,8 @@
+import json
 from fastapi import FastAPI
 from pydantic import BaseModel
 from hybrid_search.search_hybrid import hybrid_search
+from llm.recommender import generate_recommendation
 
 app = FastAPI(
     title = 'E-Commerce Product Search API',
@@ -21,6 +23,9 @@ def home():
 @app.post('/search')
 def search(request: SearchRequest):
 
+    with open('data/images/image_lookup.json', 'r') as f:
+        image_lookup = json.load(f)
+
     results = hybrid_search(
         query=request.query,
         limit=request.limit
@@ -38,12 +43,19 @@ def search(request: SearchRequest):
                 'category': product.get('main_category'),
                 'subcategory': product.get('subcategory'),
                 'price': product.get('discounted_price'),
+                'image': image_lookup.get(product['id']),
                 'score': round(score,4)
             }
+        )
+
+        summary = generate_recommendation(
+            request.query,
+            formatted_results
         )
     
     return {
         'query': request.query,
+        'summary': summary,
         'results': formatted_results
 
     }
