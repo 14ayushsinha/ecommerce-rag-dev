@@ -7,7 +7,8 @@ load_dotenv()
 
 #Initialize OpenAI Client
 client = OpenAI(
-    api_key=os.getenv('OPENAI_API_KEY')
+    api_key=os.getenv('DEEPSEEK_API_KEY'),
+    base_url="https://api.deepseek.com"
 )
 
 #System Promp
@@ -83,13 +84,15 @@ Mention the strongest matches and explain why they suit the user's query.
 """
 
     try:
-        response = client.responses.create(
-            model='gpt-5-mini',
-            instructions=SYSTEM_PROMPT,
-            input=user_prompt
+        response = client.chat.completions.create(
+            model='deepseek-v4-flash',
+            messages=[
+                {'role': 'system', 'content': SYSTEM_PROMPT},
+                {'role': 'user', 'content': user_prompt}
+            ]
         )
 
-        return response.output_text.strip()
+        return response.choices[0].message.content.strip()
     
     except Exception as e:
         print(f'LLM Error: {e}')

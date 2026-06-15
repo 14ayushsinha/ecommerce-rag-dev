@@ -1,4 +1,5 @@
 import json
+import time
 from fastapi import FastAPI
 from pydantic import BaseModel
 from hybrid_search.search_hybrid import hybrid_search
@@ -22,6 +23,7 @@ def home():
 
 @app.post('/search')
 def search(request: SearchRequest):
+
 
     with open('data/images/image_lookup.json', 'r') as f:
         image_lookup = json.load(f)
@@ -48,14 +50,13 @@ def search(request: SearchRequest):
             }
         )
 
-        summary = generate_recommendation(
-            request.query,
-            formatted_results
-        )
-    
+    summary = generate_recommendation(
+        request.query,
+        formatted_results
+    )
+
     return {
         'query': request.query,
         'summary': summary,
         'results': formatted_results
-
     }

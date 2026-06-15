@@ -5,6 +5,7 @@ from collections import defaultdict
 from dotenv import load_dotenv
 from vector_db.search import search_products
 from hybrid_search.query_parser import parse_query
+from llm.llm_query_parser import llm_parse_query
 
 #Load BM25 Artifacts
 
@@ -141,6 +142,41 @@ def diversify_results(fused_scores, limit=5):
         
     return final_results
 
+#LLM Keywords
+
+def should_use_llm(query):
+
+    keywords = [
+        'gift',
+        'comfortable',
+        'stylish',
+        'casual',
+        'formal',
+        'office',
+        'college',
+        'wedding',
+        'party',
+        'winter',
+        'summer',
+        'festive',
+        'elegant',
+        'birthday',
+        'anniversary',
+        'father',
+        'mother',
+        'husband',
+        'wife',
+        'brother',
+        'sister'
+    ]
+
+    query = query.lower()
+
+    return any(
+        keyword in query
+        for keyword in keywords
+    )
+
 #Hybrid Search
 
 def hybrid_search(query, limit=5):
@@ -149,11 +185,33 @@ def hybrid_search(query, limit=5):
         query,
         known_brands
     )
-    # print(f'Parsed query: {parsed}')
+    
+    llm_used = False
 
-    # print("\n" + "=" * 80)
-    # print("HYBRID SEARCH EXECUTED")
-    # print(f"Original Query: {query}")
+    if should_use_llm(query):
+
+        llm_result = llm_parse_query(query)
+
+        if llm_result:
+
+            llm_used = True
+
+            if llm_result['min_price'] is None:
+                llm_result['min_price'] = parsed['min_price']
+            
+            if llm_result['max_price'] is None:
+                llm_result['max_price'] = parsed['max_price']
+
+            if llm_result['brand'] is None:
+                llm_result['brand'] = parsed['brand']
+
+            parsed = llm_result
+            
+    print("\n" + "=" * 80)
+    print(f"Original Query : {query}")
+    print(f"Parser Used    : {'LLM' if llm_used else 'Regex'}")
+    print(f"Parsed Query   : {parsed}")
+    print("=" * 80)
 
     bm25_results = bm25_search(
         query=parsed['query'],
