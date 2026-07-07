@@ -7,7 +7,8 @@ def parse_query(user_query, known_brands):
         'query': user_query,
         'brand': None,
         'min_price': None,
-        'max_price': None
+        'max_price': None,
+        'category': None
     }
 
     query = user_query.lower()

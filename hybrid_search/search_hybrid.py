@@ -179,16 +179,27 @@ def should_use_llm(query):
 
 #Hybrid Search
 
-def hybrid_search(query, limit=5):
+def hybrid_search(query, brand=None, category=None, min_price=None, max_price=None, limit=5):
 
-    parsed = parse_query(
-        query,
-        known_brands
-    )
+    if(brand is None and category is None and min_price is None and max_price is None):
+        parsed = parse_query(
+            query,
+            known_brands
+        )
+    
+    else:
+
+        parsed = {
+            'query': query,
+            'brand': brand,
+            'category': category,
+            'min_price': min_price,
+            'max_price': max_price
+        }
     
     llm_used = False
 
-    if should_use_llm(query):
+    if brand is None and category is None and should_use_llm(query):
 
         llm_result = llm_parse_query(query)
 
@@ -239,8 +250,9 @@ def hybrid_search(query, limit=5):
         fused_scores,
         limit=limit
     )
-
-    return final_results
+    print("HYBRID:", parsed)
+    
+    return final_results, parsed
 
 #Main
 

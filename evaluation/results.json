@@ -1,0 +1,9 @@
+{
+    "total": 100,
+    "query_accuracy": 0.67,
+    "brand_accuracy": 1.0,
+    "min_price_accuracy": 0.93,
+    "max_price_accuracy": 0.93,
+    "category_accuracy": 0.76,
+    "overall_exact_match": 0.49
+}

@@ -1,0 +1,1002 @@
+[
+{
+"query": "Voylla necklaces between 300 and 500",
+"expected": {
+"query": "necklaces",
+"brand": "Voylla",
+"min_price": 300,
+"max_price": 500,
+"category": "Jewellery"
+}
+},
+{
+"query": "Show me Adidas running shoes under 5000",
+"expected": {
+"query": "running shoes",
+"brand": "Adidas",
+"min_price": null,
+"max_price": 5000,
+"category": "Footwear"
+}
+},
+{
+"query": "Classmate notebook above 400",
+"expected": {
+"query": "notebook",
+"brand": "Classmate",
+"min_price": 400,
+"max_price": null,
+"category": "Pens & Stationery"
+}
+},
+{
+"query": "Notebook below 500",
+"expected": {
+"query": "notebook",
+"brand": null,
+"min_price": null,
+"max_price": 500,
+"category": null
+}
+},
+{
+"query": "Men's formal shoes under 3000",
+"expected": {
+"query": "formal shoes",
+"brand": null,
+"min_price": null,
+"max_price": 3000,
+"category": "Footwear"
+}
+},
+{
+"query": "Show me casual shirts for college",
+"expected": {
+"query": "casual shirts",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": "Clothing"
+}
+},
+{
+"query": "Need elegant footwear for my sister's wedding under 3000",
+"expected": {
+"query": "elegant wedding footwear",
+"brand": null,
+"min_price": null,
+"max_price": 3000,
+"category": "Footwear"
+}
+},
+{
+"query": "I want comfortable running shoes below 2500",
+"expected": {
+"query": "comfortable running shoes",
+"brand": null,
+"min_price": null,
+"max_price": 2500,
+"category": "Footwear"
+}
+},
+{
+"query": "Need a birthday gift for my husband under 5000",
+"expected": {
+"query": "gift for husband",
+"brand": null,
+"min_price": null,
+"max_price": 5000,
+"category": null
+}
+},
+{
+"query": "Show me stylish handbags for office",
+"expected": {
+"query": "stylish handbags",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": "Bags"
+}
+},
+{
+"query": "Need comfortable footwear for my mother",
+"expected": {
+"query": "women's comfortable footwear",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": "Footwear"
+}
+},
+{
+"query": "Need gym clothes for women",
+"expected": {
+"query": "women's gym clothes",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": "Clothing"
+}
+},
+{
+"query": "Looking for a smartwatch around 10000",
+"expected": {
+"query": "smartwatch",
+"brand": null,
+"min_price": 9000,
+"max_price": 11000,
+"category": "Electronics"
+}
+},
+{
+"query": "Need festive ethnic wear for women",
+"expected": {
+"query": "festive ethnic wear",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": "Clothing"
+}
+},
+{
+"query": "Show me backpacks for college students",
+"expected": {
+"query": "backpacks",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": "Bags"
+}
+},
+{
+"query": "I want to gift my father an analog watch under 1000",
+"expected": {
+"query": "analog watch",
+"brand": null,
+"min_price": null,
+"max_price": 1000,
+"category": "Watches"
+}
+},
+{
+"query": "I want to gift my girlfriend a watch",
+"expected": {
+"query": "watch",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": "Watches"
+}
+},
+{
+"query": "Show me Nike sports shoes",
+"expected": {
+"query": "sports shoes",
+"brand": "Nike",
+"min_price": null,
+"max_price": null,
+"category": "Footwear"
+}
+},
+{
+"query": "Women's heels between 1000 and 3000",
+"expected": {
+"query": "heels",
+"brand": null,
+"min_price": 1000,
+"max_price": 3000,
+"category": "Footwear"
+}
+},
+{
+"query": "Formal shirts under 1500",
+"expected": {
+"query": "formal shirts",
+"brand": null,
+"min_price": null,
+"max_price": 1500,
+"category": "Clothing"
+}
+},
+{
+"query": "Puma sneakers below 4000",
+"expected": {
+"query": "sneakers",
+"brand": "Puma",
+"min_price": null,
+"max_price": 4000,
+"category": "Footwear"
+}
+},
+{
+"query": "Need toys for kids under 1000",
+"expected": {
+"query": "kids toys",
+"brand": null,
+"min_price": null,
+"max_price": 1000,
+"category": "Toys"
+}
+},
+{
+"query": "Show me office bags for men",
+"expected": {
+"query": "office bags",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": "Bags"
+}
+},
+{
+"query": "Leather wallet above 500",
+"expected": {
+"query": "leather wallet",
+"brand": null,
+"min_price": 500,
+"max_price": null,
+"category": "Bags"
+}
+},
+{
+"query": "Samsung headphones under 3000",
+"expected": {
+"query": "headphones",
+"brand": "Samsung",
+"min_price": null,
+"max_price": 3000,
+"category": "Electronics"
+}
+},
+{
+"query": "I need something elegant to wear on my feet for my cousin's wedding under 4000",
+"expected": {
+"query": "elegant wedding footwear",
+"brand": null,
+"min_price": null,
+"max_price": 4000,
+"category": "Footwear"
+}
+},
+{
+"query": "Can you suggest a nice handbag that I can carry to work every day?",
+"expected": {
+"query": "office handbag",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": "Bags"
+}
+},
+{
+"query": "I need something comfortable for jogging every morning under 2500",
+"expected": {
+"query": "running shoes",
+"brand": null,
+"min_price": null,
+"max_price": 2500,
+"category": "Footwear"
+}
+},
+{
+"query": "I want to buy a birthday present for my dad and my budget is around 3000",
+"expected": {
+"query": "gift for father",
+"brand": null,
+"min_price": 2500,
+"max_price": 3500,
+"category": null
+}
+},
+{
+"query": "Show me clothes suitable for women who go to the gym regularly",
+"expected": {
+"query": "women's gym clothes",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": "Clothing"
+}
+},
+{
+"query": "Need footwear that I can wear daily to the office",
+"expected": {
+"query": "formal shoes",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": "Footwear"
+}
+},
+{
+"query": "I want a watch that would make a good anniversary gift for my wife",
+"expected": {
+"query": "women's watch",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": "Watches"
+}
+},
+{
+"query": "Need something trendy that college students usually carry",
+"expected": {
+"query": "backpack",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": "Bags"
+}
+},
+{
+"query": "I am looking for winter wear suitable for men",
+"expected": {
+"query": "winter jackets for men",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": "Clothing"
+}
+},
+{
+"query": "Need footwear for my mother that is easy on her feet",
+"expected": {
+"query": "women's comfortable footwear",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": "Footwear"
+}
+},
+{
+"query": "I need a gift for my girlfriend but I don't want to spend more than 2000",
+"expected": {
+"query": "gift for girlfriend",
+"brand": null,
+"min_price": null,
+"max_price": 2000,
+"category": null
+}
+},
+{
+"query": "Suggest something formal that men can wear to the office",
+"expected": {
+"query": "formal shirts",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": "Clothing"
+}
+},
+{
+"query": "I need a stylish pair of heels for parties under 3500",
+"expected": {
+"query": "party heels",
+"brand": null,
+"min_price": null,
+"max_price": 3500,
+"category": "Footwear"
+}
+},
+{
+"query": "Need something fun that my 5-year-old son would enjoy playing with",
+"expected": {
+"query": "kids toys",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": "Toys"
+}
+},
+{
+"query": "I want shoes that I can use for workouts and running",
+"expected": {
+"query": "running shoes",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": "Footwear"
+}
+},
+{
+"query": "Show me ethnic outfits suitable for festive occasions",
+"expected": {
+"query": "festive ethnic wear",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": "Clothing"
+}
+},
+{
+"query": "Need a smartwatch that costs somewhere around 15000",
+"expected": {
+"query": "smartwatch",
+"brand": null,
+"min_price": 14000,
+"max_price": 16000,
+"category": "Electronics"
+}
+},
+{
+"query": "I want a necklace that I can wear to weddings",
+"expected": {
+"query": "wedding necklace",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": "Jewellery"
+}
+},
+{
+"query": "Need something professional to carry my laptop to work",
+"expected": {
+"query": "laptop bag",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": "Bags"
+}
+},
+{
+"query": "I need a present for my husband's birthday and my budget is around 5000",
+"expected": {
+"query": "gift for husband",
+"brand": null,
+"min_price": 4500,
+"max_price": 5500,
+"category": null
+}
+},
+{
+"query": "Show me shoes suitable for long walks",
+"expected": {
+"query": "walking shoes",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": "Footwear"
+}
+},
+{
+"query": "Need some clothing options for women going on vacations",
+"expected": {
+"query": "women's casual clothing",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": "Clothing"
+}
+},
+{
+"query": "Suggest a good watch for my father's retirement gift",
+"expected": {
+"query": "men's watch",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": "Watches"
+}
+},
+{
+"query": "Need accessories for my car that are actually useful",
+"expected": {
+"query": "car accessories",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": "Automotive"
+}
+},
+{
+"query": "I want something that women can wear to traditional celebrations",
+"expected": {
+"query": "women's ethnic wear",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": "Clothing"
+}
+},
+{
+"query": "I need a birthday gift for my girlfriend",
+"expected": {
+"query": "gift for girlfriend",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": null
+}
+},
+{
+"query": "Suggest something nice for my father's retirement",
+"expected": {
+"query": "gift for father",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": null
+}
+},
+{
+"query": "Need a present for my husband who loves dressing well",
+"expected": {
+"query": "gift for husband",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": null
+}
+},
+{
+"query": "Show me something my wife would love as an anniversary gift",
+"expected": {
+"query": "gift for wife",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": null
+}
+},
+{
+"query": "Need a gift for my mother's birthday under 3000",
+"expected": {
+"query": "gift for mother",
+"brand": null,
+"min_price": null,
+"max_price": 3000,
+"category": null
+}
+},
+{
+"query": "Find something special for my boyfriend",
+"expected": {
+"query": "gift for boyfriend",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": null
+}
+},
+{
+"query": "I need a watch that I can gift my dad",
+"expected": {
+"query": "men's watch",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": "Watches"
+}
+},
+{
+"query": "Show me jewellery that would suit a bride",
+"expected": {
+"query": "bridal jewellery",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": "Jewellery"
+}
+},
+{
+"query": "Need elegant footwear for my mother's anniversary party",
+"expected": {
+"query": "women's elegant footwear",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": "Footwear"
+}
+},
+{
+"query": "Find me something trendy for my teenage sister",
+"expected": {
+"query": "gift for teenage sister",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": null
+}
+},
+{
+"query": "Need some toys that my nephew would enjoy",
+"expected": {
+"query": "kids toys",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": "Toys"
+}
+},
+{
+"query": "Suggest something practical for a college student",
+"expected": {
+"query": "college essentials",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": null
+}
+},
+{
+"query": "Show me bags suitable for working women",
+"expected": {
+"query": "office handbags",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": "Bags"
+}
+},
+{
+"query": "Need something comfortable for my grandmother",
+"expected": {
+"query": "comfortable women's footwear",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": "Footwear"
+}
+},
+{
+"query": "Find me some formal wear for my first office job",
+"expected": {
+"query": "formal clothing",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": "Clothing"
+}
+},
+{
+"query": "Need a gift for my boss under 5000",
+"expected": {
+"query": "gift for boss",
+"brand": null,
+"min_price": null,
+"max_price": 5000,
+"category": null
+}
+},
+{
+"query": "Show me something stylish for a bride-to-be",
+"expected": {
+"query": "bridal accessories",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": null
+}
+},
+{
+"query": "Need a thoughtful gift for my best friend",
+"expected": {
+"query": "gift for friend",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": null
+}
+},
+{
+"query": "Find something useful for someone who travels frequently",
+"expected": {
+"query": "travel accessories",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": null
+}
+},
+{
+"query": "Need footwear for my dad that he can wear every day",
+"expected": {
+"query": "men's comfortable footwear",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": "Footwear"
+}
+},
+{
+"query": "Show me something that would be perfect for a housewarming gift",
+"expected": {
+"query": "housewarming gift",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": null
+}
+},
+{
+"query": "Need an anniversary present for my parents",
+"expected": {
+"query": "gift for parents",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": null
+}
+},
+{
+"query": "Suggest a watch suitable for a young professional",
+"expected": {
+"query": "professional watch",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": "Watches"
+}
+},
+{
+"query": "Need something elegant for my daughter's graduation ceremony",
+"expected": {
+"query": "women's elegant accessories",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": null
+}
+},
+{
+"query": "Show me products that would make a good wedding gift",
+"expected": {
+"query": "wedding gift",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": null
+}
+},
+{
+"query": "voylla neckless btwn 300 n 500",
+"expected": {
+"query": "necklaces",
+"brand": "Voylla",
+"min_price": 300,
+"max_price": 500,
+"category": "Jewellery"
+}
+},
+{
+"query": "show me nike shooes under 5k",
+"expected": {
+"query": "shoes",
+"brand": "Nike",
+"min_price": null,
+"max_price": 5000,
+"category": "Footwear"
+}
+},
+{
+"query": "need gym clothes 4 women",
+"expected": {
+"query": "women's gym clothes",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": "Clothing"
+}
+},
+{
+"query": "watch for dad bday gift <1000",
+"expected": {
+"query": "men's watch",
+"brand": null,
+"min_price": null,
+"max_price": 1000,
+"category": "Watches"
+}
+},
+{
+"query": "classmate notebook 500/- se niche",
+"expected": {
+"query": "notebook",
+"brand": "Classmate",
+"min_price": null,
+"max_price": 500,
+"category": "Pens & Stationery"
+}
+},
+{
+"query": "show me addidas running shoes",
+"expected": {
+"query": "running shoes",
+"brand": "Adidas",
+"min_price": null,
+"max_price": null,
+"category": "Footwear"
+}
+},
+{
+"query": "casual shirts 4 college boys",
+"expected": {
+"query": "casual shirts",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": "Clothing"
+}
+},
+{
+"query": "need some toys fr my nephew under 1k",
+"expected": {
+"query": "kids toys",
+"brand": null,
+"min_price": null,
+"max_price": 1000,
+"category": "Toys"
+}
+},
+{
+"query": "formal shoes >2000",
+"expected": {
+"query": "formal shoes",
+"brand": null,
+"min_price": 2000,
+"max_price": null,
+"category": "Footwear"
+}
+},
+{
+"query": "heels < 2500",
+"expected": {
+"query": "heels",
+"brand": null,
+"min_price": null,
+"max_price": 2500,
+"category": "Footwear"
+}
+},
+{
+"query": "gift gf under 2k",
+"expected": {
+"query": "gift for girlfriend",
+"brand": null,
+"min_price": null,
+"max_price": 2000,
+"category": null
+}
+},
+{
+"query": "need smthng for my mom comfortable footwear",
+"expected": {
+"query": "women's comfortable footwear",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": "Footwear"
+}
+},
+{
+"query": "wedding jewellery below 10k",
+"expected": {
+"query": "wedding jewellery",
+"brand": null,
+"min_price": null,
+"max_price": 10000,
+"category": "Jewellery"
+}
+},
+{
+"query": "show puma sneakers around 4k",
+"expected": {
+"query": "sneakers",
+"brand": "Puma",
+"min_price": 3500,
+"max_price": 4500,
+"category": "Footwear"
+}
+},
+{
+"query": "need bags office women",
+"expected": {
+"query": "office handbags",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": "Bags"
+}
+},
+{
+"query": "smartwatch 10k budget",
+"expected": {
+"query": "smartwatch",
+"brand": null,
+"min_price": 9000,
+"max_price": 11000,
+"category": "Electronics"
+}
+},
+{
+"query": "formal wear for 1st office job",
+"expected": {
+"query": "formal clothing",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": "Clothing"
+}
+},
+{
+"query": "car accessories useful ones",
+"expected": {
+"query": "car accessories",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": "Automotive"
+}
+},
+{
+"query": "show me some good shoes",
+"expected": {
+"query": "shoes",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": "Footwear"
+}
+},
+{
+"query": "need decent watch",
+"expected": {
+"query": "watch",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": "Watches"
+}
+},
+{
+"query": "show nike shoes below 5000 above 2000",
+"expected": {
+"query": "shoes",
+"brand": "Nike",
+"min_price": 2000,
+"max_price": 5000,
+"category": "Footwear"
+}
+},
+{
+"query": "need footwear 4 sis wedding 3k max",
+"expected": {
+"query": "elegant wedding footwear",
+"brand": null,
+"min_price": null,
+"max_price": 3000,
+"category": "Footwear"
+}
+},
+{
+"query": "gift for hubby around 5k",
+"expected": {
+"query": "gift for husband",
+"brand": null,
+"min_price": 4500,
+"max_price": 5500,
+"category": null
+}
+},
+{
+"query": "show me classmate note books",
+"expected": {
+"query": "notebook",
+"brand": "Classmate",
+"min_price": null,
+"max_price": null,
+"category": "Pens & Stationery"
+}
+},
+{
+"query": "need some winter stuff for men",
+"expected": {
+"query": "winter jackets for men",
+"brand": null,
+"min_price": null,
+"max_price": null,
+"category": "Clothing"
+}
+}
+]

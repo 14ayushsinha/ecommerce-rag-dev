@@ -11,8 +11,15 @@ app = FastAPI(
     version = '1.0.0'
 )
 
+with open('data/images/image_lookup.json', 'r') as f:
+    image_lookup = json.load(f)
+
 class SearchRequest(BaseModel):
     query: str
+    brand: str | None=None
+    category: str | None=None
+    min_price: int | None=None
+    max_price: int | None=None
     limit: int = 5
 
 @app.get('/')
@@ -24,12 +31,12 @@ def home():
 @app.post('/search')
 def search(request: SearchRequest):
 
-
-    with open('data/images/image_lookup.json', 'r') as f:
-        image_lookup = json.load(f)
-
-    results = hybrid_search(
+    results, parsed = hybrid_search(
         query=request.query,
+        brand=request.brand,
+        category=request.category,
+        min_price=request.min_price,
+        max_price=request.max_price,
         limit=request.limit
     )
 
@@ -55,8 +62,13 @@ def search(request: SearchRequest):
         formatted_results
     )
 
+    print("\nAPI Returning Parsed:")
+    print(parsed)
+    print()
+    
     return {
         'query': request.query,
+        'parsed_query': parsed,
         'summary': summary,
         'results': formatted_results
     }

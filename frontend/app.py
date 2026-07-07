@@ -1,6 +1,14 @@
+import sys
+from pathlib import Path
+ROOT_DIR = Path(__file__).resolve().parent.parent
+sys.path.append(str(ROOT_DIR))
+
 import streamlit as st
 import requests
 import time
+from session.search_context import SearchContext
+from session.refinement import (is_refinement, apply_refinement)
+from llm.refinement_parser import llm_refine_query
 
 API_URL = 'http://127.0.0.1:8000/search'
 
@@ -9,6 +17,9 @@ st.set_page_config(
     page_icon="🛍️",
     layout='wide'
 )
+
+if 'search_context' not in st.session_state:
+    st.session_state.search_context = SearchContext()
 
 #Header
 st.title("🛍️ AI Product Search")
@@ -33,6 +44,11 @@ sort_option = st.sidebar.selectbox(
     )
 )
 
+with st.sidebar:
+    st.subheader('Search Context')
+
+    st.json(st.session_state.search_context.to_dict())
+
 #Search Bar
 query = st.text_input(
     'Search for products',
@@ -51,13 +67,45 @@ if st.button("🔍 search", use_container_width=True):
         try:
             start_time = time.time()
 
-            response = requests.post(
-                API_URL,
-                json={
-                    'query': query,
-                    'limit': limit
-                }
+            context = st.session_state.search_context
+
+            is_followup = (
+                context.query is not None
+                and is_refinement(query)
             )
+
+            if is_followup:
+                refined_payload = apply_refinement(query, st.session_state.search_context)
+
+                if refined_payload is None:
+                    refined_payload = llm_refine_query(st.session_state.search_context.to_dict(), query)
+                    st.session_state.search_context.update(refined_payload)
+
+                else:
+                    st.session_state.search_context.update(refined_payload)
+                    
+                response = requests.post(
+                    API_URL,
+                    json = refined_payload
+                )
+
+                data = response.json()
+                parsed_query = data.get('parsed_query', {})
+                st.session_state.search_context.update(parsed_query)
+            
+            else:
+                response = requests.post(
+                    API_URL,
+                    json = {
+                        'query':query,
+                        'limit':limit
+                    }
+                )
+
+                data = response.json()
+                print(data)
+                parsed_query = data.get('parsed_query', {})
+                st.session_state.search_context.update(parsed_query)
 
             elapsed_time = time.time() - start_time
         
