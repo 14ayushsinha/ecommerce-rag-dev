@@ -1,4 +1,5 @@
 import sys
+import traceback
 from pathlib import Path
 ROOT_DIR = Path(__file__).resolve().parent.parent
 sys.path.append(str(ROOT_DIR))
@@ -9,6 +10,7 @@ import time
 from session.search_context import SearchContext
 from session.refinement import (is_refinement, apply_refinement)
 from llm.refinement_parser import llm_refine_query
+from session.followup_classifier import is_followup
 
 API_URL = 'http://127.0.0.1:8000/search'
 
@@ -68,42 +70,74 @@ if st.button("🔍 search", use_container_width=True):
             start_time = time.time()
 
             context = st.session_state.search_context
+            print("\n" + "="*70)
+            print("CURRENT CONTEXT")
+            print(context.to_dict())
+            print("="*70)
 
-            is_followup = (
-                context.query is not None
-                and is_refinement(query)
-            )
+            followup = is_followup(context, query)
+            print(f"Current Query : {query}")
+            print(f"Is Follow-up  : {followup}")
+            print("="*70)
 
-            if is_followup:
-                refined_payload = apply_refinement(query, st.session_state.search_context)
+            if followup:
 
-                if refined_payload is None:
-                    refined_payload = llm_refine_query(st.session_state.search_context.to_dict(), query)
-                    st.session_state.search_context.update(refined_payload)
+                print(apply_refinement)
+                print(apply_refinement.__module__)
+                print(apply_refinement.__code__.co_filename)
+                result = apply_refinement(query, st.session_state.search_context)
+
+                print(type(result))
+                print(result)
+
+                refined_payload, source = result
+
+                print(refined_payload)
+                print(source)
+
+                if source == 'llm':
+
+                    if refined_payload is None:
+
+                        print("\nRegex couldn't handle refinement.")
+                        print("Calling LLM refinement...")
+
+                        refined_payload = llm_refine_query(st.session_state.search_context.to_dict(), query)
+                        st.session_state.search_context.update(refined_payload)
 
                 else:
                     st.session_state.search_context.update(refined_payload)
+                
+                print("=" * 60)
+                print("Sending payload")
+                print(refined_payload)
+                print(type(refined_payload))
+                print("=" * 60)
                     
                 response = requests.post(
                     API_URL,
                     json = refined_payload
                 )
 
+                print(response.status_code)
+                print(response.text)
+
                 data = response.json()
                 parsed_query = data.get('parsed_query', {})
                 st.session_state.search_context.update(parsed_query)
             
             else:
+                st.session_state.search_context.reset()
+
                 response = requests.post(
                     API_URL,
-                    json = {
+                    json={
                         'query':query,
-                        'limit':limit
+                        'limit': limit
                     }
                 )
 
                 data = response.json()
-                print(data)
                 parsed_query = data.get('parsed_query', {})
                 st.session_state.search_context.update(parsed_query)
 
@@ -203,8 +237,9 @@ if st.button("🔍 search", use_container_width=True):
                     f'{response.status_code}'
                 )
 
-        except Exception as e:
-            st.error(f'Something went wrong:\n{e}')
+        except Exception:
+            traceback.print_exc()
+            raise
 
     else:
         st.warning('Please enter a search query.')

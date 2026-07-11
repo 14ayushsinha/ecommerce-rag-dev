@@ -104,6 +104,17 @@ Return ONLY valid JSON.
 """
 
 def llm_refine_query(context: dict, refinement: str):
+
+    print("\n" + "="*80)
+    print("LLM REFINEMENT CALLED")
+    print("="*80)
+
+    print("Previous Context:")
+    print(context)
+
+    print("\nUser Refinement:")
+    print(refinement)
+
     user_prompt = f"""
     Previous Context:
     {json.dumps(context, indent=2)}
@@ -131,6 +142,13 @@ def llm_refine_query(context: dict, refinement: str):
             content = content.replace('```', '')
             content = content.strip()
 
+        updated = json.loads(content)
+
+        print("\nUpdated Context:")
+        print(updated)
+
+        print("="*80)
+        
         return json.loads(content)
 
     except Exception as e:

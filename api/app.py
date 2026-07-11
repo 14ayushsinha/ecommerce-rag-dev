@@ -62,9 +62,9 @@ def search(request: SearchRequest):
         formatted_results
     )
 
-    print("\nAPI Returning Parsed:")
-    print(parsed)
-    print()
+    # print("\nAPI Returning Parsed:")
+    # print(parsed)
+    # print()
     
     return {
         'query': request.query,

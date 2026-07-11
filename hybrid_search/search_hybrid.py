@@ -250,7 +250,7 @@ def hybrid_search(query, brand=None, category=None, min_price=None, max_price=No
         fused_scores,
         limit=limit
     )
-    print("HYBRID:", parsed)
+    # print("HYBRID:", parsed)
     
     return final_results, parsed
 
