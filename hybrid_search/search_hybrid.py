@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 from vector_db.search import search_products
 from hybrid_search.query_parser import parse_query
 from llm.llm_query_parser import llm_parse_query
+from reranker.cross_encoder import rerank_results
 
 #Load BM25 Artifacts
 
@@ -37,7 +38,13 @@ product_lookup = {
 
 #BM25 Filtering Helper
 
-def passes_filters(product, max_price=None, brand=None, category=None):
+def passes_filters(product, min_price=None, max_price=None, brand=None, category=None):
+
+    if min_price is not None:
+        price = product.get('discounted_price')
+
+        if price is None or price > min_price:
+            return False
 
     if max_price is not None:
         price = product.get('discounted_price')
@@ -79,6 +86,7 @@ def bm25_search(query, min_price=None, max_price=None, brand=None, category=None
 
         if passes_filters(
             product,
+            min_price=min_price,
             max_price=max_price,
             brand=brand,
             category=category
@@ -147,6 +155,16 @@ def diversify_results(fused_scores, limit=5):
 def should_use_llm(query):
 
     keywords = [
+        "show me",
+        "find me",
+        "search for",
+        "looking for",
+        "i need",
+        "i want",
+        "please",
+        "can you",
+        "could you",
+        "get me",
         'gift',
         'comfortable',
         'stylish',
@@ -239,18 +257,30 @@ def hybrid_search(query, brand=None, category=None, min_price=None, max_price=No
         max_price=parsed['max_price'],
         limit=50
     )
-    # print(vector_results[0].payload)
 
     fused_scores = reciprocal_rank_fusion(
         bm25_results,
         vector_results
     )
 
-    final_results = diversify_results(
+    candidate_results = diversify_results(
         fused_scores,
-        limit=limit
+        limit=50
     )
-    # print("HYBRID:", parsed)
+
+    print('\nCross Encoder Reranking...')
+
+    reranked = rerank_results(
+        query=parsed['query'],
+        results = candidate_results,
+        top_k=50
+    )
+
+    # print('Top 5 after reranking:')
+    # for product, score in reranked[:5]:
+    #     print(product['name'], score)
+    
+    final_results = reranked[:limit]
     
     return final_results, parsed
 

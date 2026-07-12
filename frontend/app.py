@@ -70,30 +70,30 @@ if st.button("🔍 search", use_container_width=True):
             start_time = time.time()
 
             context = st.session_state.search_context
-            print("\n" + "="*70)
-            print("CURRENT CONTEXT")
-            print(context.to_dict())
-            print("="*70)
+            # print("\n" + "="*70)
+            # print("CURRENT CONTEXT")
+            # print(context.to_dict())
+            # print("="*70)
 
             followup = is_followup(context, query)
-            print(f"Current Query : {query}")
-            print(f"Is Follow-up  : {followup}")
-            print("="*70)
+            # print(f"Current Query : {query}")
+            # print(f"Is Follow-up  : {followup}")
+            # print("="*70)
 
             if followup:
 
-                print(apply_refinement)
-                print(apply_refinement.__module__)
-                print(apply_refinement.__code__.co_filename)
+                # print(apply_refinement)
+                # print(apply_refinement.__module__)
+                # print(apply_refinement.__code__.co_filename)
                 result = apply_refinement(query, st.session_state.search_context)
 
-                print(type(result))
-                print(result)
+                # print(type(result))
+                # print(result)
 
                 refined_payload, source = result
 
-                print(refined_payload)
-                print(source)
+                # print(refined_payload)
+                # print(source)
 
                 if source == 'llm':
 
@@ -108,19 +108,19 @@ if st.button("🔍 search", use_container_width=True):
                 else:
                     st.session_state.search_context.update(refined_payload)
                 
-                print("=" * 60)
-                print("Sending payload")
-                print(refined_payload)
-                print(type(refined_payload))
-                print("=" * 60)
+                # print("=" * 60)
+                # print("Sending payload")
+                # print(refined_payload)
+                # print(type(refined_payload))
+                # print("=" * 60)
                     
                 response = requests.post(
                     API_URL,
                     json = refined_payload
                 )
 
-                print(response.status_code)
-                print(response.text)
+                # print(response.status_code)
+                # print(response.text)
 
                 data = response.json()
                 parsed_query = data.get('parsed_query', {})
@@ -219,16 +219,8 @@ if st.button("🔍 search", use_container_width=True):
                                 f"{product['subcategory']}" 
                             )
 
-                            st.progress(
-                                min(
-                                    product['score']*25,
-                                    1.0
-                                )
-                            )
-
                             st.caption(
-                                f'Search relevance: '
-                                f'{product['score']:.4f}'
+                                f'Retrieved using Hybrid Search + Cross Encoder'
                             )
 
             else:
