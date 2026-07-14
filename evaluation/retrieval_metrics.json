@@ -1,0 +1,10 @@
+{
+    "Queries": 30,
+    "Precision@5": 0.607,
+    "Recall@5": 0.853,
+    "HitRate@5": 0.867,
+    "Precision@10": 0.31,
+    "Recall@10": 0.867,
+    "HitRate@10": 0.867,
+    "MRR": 0.84
+}

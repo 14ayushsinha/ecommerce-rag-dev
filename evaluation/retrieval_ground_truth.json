@@ -1,0 +1,241 @@
+[
+    {
+        "query": "running shoes under 5000",
+        "relevant_products": [
+            "Select Sporty Running Shoes",
+            "xpert Running Shoes",
+            "BAAJ Running Shoes",
+            "ETHICS Running Shoes",
+            "CANMP Running Shoes"
+        ]
+    },
+    {
+        "query": "laptop under 50000",
+        "relevant_products": [
+            "HP 15-ac116TX (Notebook) (Core i3 (5th Gen)/ 4GB/ 1TB/ Win10/ 2GB Graph) (N8M19PA)",
+            "HP 15-ac121tu (Notebook) (Core i3 (5th Gen)/ 4GB/ 1TB/ Win10) (N8M17PA)"
+        ]
+    },
+    {
+        "query": "Voylla necklaces between 300 and 500",
+        "relevant_products": [
+            "Voylla Fabric Necklace",
+            "Voylla Artificial Beaded Glossy Yellow Gold Plated Alloy Necklace",
+            "Voylla Artificial Plain Yellow Gold Plated Alloy Necklace",
+            "Voylla Artificial Classic Plain Yellow Gold Plated Alloy Necklace",
+            "Voylla Artificial Classic Plain Crystal Yellow Gold Plated Alloy Necklace"
+        ]
+    },
+    {
+        "query": "Classmate notebook above 400",
+        "relevant_products": [
+            "Classmate Adversity causes Regular Notebook Soft Bound"
+        ]
+    },
+    {
+        "query": "Notebook below 500",
+        "relevant_products": []
+    },
+    {
+        "query": "Show me casual shirts for college",
+        "relevant_products": [
+            "Dinero Women's Solid Casual Shirt"
+        ]
+    },
+    {
+        "query": "Need elegant footwear for my sister's wedding under 3000",
+        "relevant_products": [
+            "Faith Leenise 100105 Women Heels",
+            "Pantof Women Heels",
+            "GLAMWALK Festive Bellies",
+            "Foot Candy Women Heels",
+            "Clarks Olga Masie Women Flats"
+        ]
+    },
+    {
+        "query": "Need a birthday gift for my husband under 5000",
+        "relevant_products": [
+            "Day By Day Men's Top",
+            "Body Care Plain Men's Top",
+            "Calvin Klein Men's Brief",
+            "R-Lon Men's Brief",
+            "Bodymark 768 Men's Cargos"
+        ]
+    },
+    {
+        "query": "Show me stylish handbags for office",
+        "relevant_products": [
+            "Cottage Hand-held Bag",
+            "E2O Hand Bag",
+            "Edel Shoulder Bag",
+            "Maayas Shoulder Bag",
+            "Fine Craft India Pouch Potli"
+        ]
+    },
+    {
+        "query": "Need gym clothes for women",
+        "relevant_products": [
+            "Mynte Solid Women's Cycling Shorts, Gym Shorts, Swim Shorts",
+            "Platinum Rags Women's Camisole",
+            "Jazzup Women's Leggings"
+        ]
+    },
+    {
+        "query": "Looking for a smartwatch around 10000",
+        "relevant_products": [
+            "Skmei 1070BLK Sports Analog-Digital Watch  - For Men, Boys"
+        ]
+    },
+    {
+        "query": "Need festive ethnic wear for women",
+        "relevant_products": [
+            "saubhagyawatifashions Festive Printed Women's Kurti",
+            "Folklore Women's Printed Festive Shirt",
+            "Folklore Women's Solid Festive Shirt",
+            "Kumi Women's Solid Casual, Festive, Party Shirt",
+            "Aaliya Festive Full Sleeve Solid Women's Top"
+        ]
+    },
+    {
+        "query": "Show me backpacks for college students",
+        "relevant_products": [
+            "United Bags 1000D Rainbow 35 L Medium Backpack",
+            "United Bags Density 35 L Medium Laptop Backpack",
+            "U United WILD FLOWER 14 L Backpack",
+            "Legato rugsack 2.5 L Backpack",
+            "Zwart RYKER 30 L Medium Backpack"
+        ]
+    },
+    {
+        "query": "I want to gift my father an analog watch under 1000",
+        "relevant_products": [
+            "Fastrack 9333PP04 Analog Watch  - For Men",
+            "R.S D&G16 Analog Watch  - For Men",
+            "Fastrack 9331PP01 Basics Analog Watch  - For Men",
+            "Maxima 06896LMGY Gold Analog Watch  - For Men",
+            "Timewel N1584 Analog Watch  - For Men"
+        ]
+    },
+    {
+        "query": "I want to gift my girlfriend a watch",
+        "relevant_products": [
+            "Luba ghk54 Stylo Analog Watch  - For Women",
+            "Timebre TMLXPRL53 Premium Analog Watch  - For Women",
+            "Stylisda SFK09 Analog Watch  - For Women",
+            "Sitaram SRE155 Analog Watch  - For Girls, Women",
+            "Q&Q DA37J504Y Analog Watch  - For Women"
+        ]
+    },
+    {
+        "query": "Show me Nike sports shoes",
+        "relevant_products": [
+            "Nike 684658-003 Training & Gym Shoes, Running Shoes"
+        ]
+    },
+    {
+        "query": "Formal shirts under 1500",
+        "relevant_products": [
+            "Invictus Men's Striped Formal Shirt",
+            "Jaabili Men's Solid Formal Shirt",
+            "Lee Mark Men's Solid Formal Shirt"
+        ]
+    },
+    {
+        "query": "Puma sneakers below 4000",
+        "relevant_products": [
+            "Puma Casuals",
+            "Puma Adreno FG Jr Sports Shoes"
+        ]
+    },
+    {
+        "query": "Need toys for kids under 1000",
+        "relevant_products": [
+            "DIY Building Blocks for kids and children to build animals",
+            "Wishkey 4D printing Talking Tom Learning Ipad for kids",
+            "Naaz The Young Scientist for kids Board Game",
+            "Shopat7 Avengers Averngrs Art Plastic Pencil Box",
+            "Naaz Manicure Pedicure Kit For Kids and adult Board Game"
+        ]
+    },
+    {
+        "query": "Show me office bags for men",
+        "relevant_products": []
+    },
+    {
+        "query": "Leather wallet above 500",
+        "relevant_products": []
+    },
+    {
+        "query": "Samsung headphones under 3000",
+        "relevant_products": []
+    },
+    {
+        "query": "I am looking for winter wear suitable for men",
+        "relevant_products": [
+            "Cayman Full Sleeve Solid Men's Sweatshirt",
+            "NU9 Sleeveless Solid Men's Jacket",
+            "People Full Sleeve Solid Men's Sweatshirt",
+            "Rodid Full Sleeve Solid Men's Sweatshirt",
+            "AUSTIN WOOD Striped V-neck Casual Men's Sweater"
+        ]
+    },
+    {
+        "query": "Suggest something formal that men can wear to the office",
+        "relevant_products": [
+            "Raymond Men's Printed Formal Blue Shirt",
+            "Yepme Slip On Shoes",
+            "KRiSS Men's Solid Formal Linen Blue Shirt",
+            "Lamode Men's Checkered Formal Shirt",
+            "Lamode Men's Solid Formal Shirt"
+        ]
+    },
+    {
+        "query": "trimmer under 1000",
+        "relevant_products": [
+            "Blue Me Trimmer 216 B Shaver For Men, Women",
+            "Brite Rechargeable 490 Trimmer For Men",
+            "Kemei Professional 01400-0015 Trimmer For Men",
+            "s2s Trimmer rechargeable hair remover 280r Shaver For Women, Men",
+            "Agaro Hair and Beard MT-5099 Trimmer For Men"
+        ]
+    },
+    {
+        "query": "refrigerator under 20000",
+        "relevant_products": [
+            "Kelvinator 190 L Direct Cool Single Door Refrigerator",
+            "Haier 247 L Frost Free Double Door Refrigerator"
+        ]
+    },
+    {
+        "query": "earphones under 1000",
+        "relevant_products": [
+            "Adiva METAL EARPHONES FOR Mi 4i AND Mi 4 STEREO EARPHONES Headphones"
+        ]
+    },
+    {
+        "query": "cap for men",
+        "relevant_products": [
+            "UNCLE BENIT WOOLEN CAP Cap",
+            "UNCLE BENIT MONKEY CAP Cap",
+            "Levi's Solid Caps Cap",
+            "Quiksilver Cap"
+        ]
+    },
+    {
+        "query": "leather belt for men",
+        "relevant_products": [
+            "Vermello Men Casual Brown Genuine Leather Belt",
+            "Ligans NY Men Formal Black Genuine Leather Belt"
+        ]
+    },
+    {
+        "query": "socks for men under 500",
+        "relevant_products": [
+            "Sonpra Men's Mid-calf Length Socks",
+            "Reebok Men's Ankle Length Socks",
+            "prored Men's Printed No Show Socks",
+            "SUNPLEON Men's Mid-calf Length Socks",
+            "Camey Men's Quarter Length Socks"
+        ]
+    }
+]

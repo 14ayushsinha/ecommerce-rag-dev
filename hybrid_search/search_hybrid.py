@@ -276,9 +276,9 @@ def hybrid_search(query, brand=None, category=None, min_price=None, max_price=No
         top_k=50
     )
 
-    # print('Top 5 after reranking:')
-    # for product, score in reranked[:5]:
-    #     print(product['name'], score)
+    print('Top 5 after reranking:')
+    for product, score in reranked[:5]:
+        print(f'"{product['name']}",')
     
     final_results = reranked[:limit]
     
