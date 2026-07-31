@@ -1,0 +1,11 @@
+datasets
+huggingface_hub
+python-dotenv
+qdrant-client
+sentence-transformers
+fastapi
+uvicorn
+streamlit
+numpy
+pandas
+tqdm
