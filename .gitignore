@@ -66,3 +66,8 @@ qdrant_storage/
 # ============================
 .DS_Store
 Thumbs.db
+
+# Generated embedding artifacts
+data/embeddings/vectors/
+data/embeddings/metadata/
+data/embeddings/checkpoints/

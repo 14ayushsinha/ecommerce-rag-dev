@@ -67,7 +67,7 @@ CHECKPOINT_DIR.mkdir(parents=True, exist_ok=True)
 
 EMBEDDING_MODEL = "BAAI/bge-small-en-v1.5"
 EMBEDDING_DIMENSION = 384
-EMBEDDING_GENERATION_BATCH_SIZE = 10000
+READ_BATCH_SIZE = 10000
 
 # ==========================================================
 # Qdrant Configuration
@@ -81,3 +81,21 @@ UPLOAD_BATCH_SIZE = 5000
 # ==========================================================
 
 MODEL_INFERENCE_BATCH_SIZE = 256
+
+# ==========================================================
+# Max Embedding Characters
+# ==========================================================
+
+MAX_EMBEDDING_CHARACTERS = 4000
+
+# ==========================================================
+# Max Description Characters
+# ==========================================================
+
+MAX_DESCRIPTION_CHARS = 1500
+
+# ==========================================================
+# Max Specification Characters
+# ==========================================================
+
+MAX_SPECIFICATION_CHARS = 1500

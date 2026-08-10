@@ -66,7 +66,7 @@ class EmbeddingModel:
 
         embeddings = model.encode(
             texts,
-            batch_size=MODEL_INFERENCE_BATCH_SIZE,
+            batch_size=batch_size,
             show_progress_bar=False,
             normalize_embeddings=True,
             convert_to_numpy=True
